@@ -1,4 +1,4 @@
-package org.spring.demo.bean;
+package org.spring.demo.bean.test2;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,8 +10,10 @@ public class ApplicationContextTest_2 {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("application_2.xml");
-        Object oneBean = context.getBean("oneBean");
-        System.out.println(oneBean);//输出org.spring.demo.bean.OneBean@13805618
+        UserService userService = (UserService) context.getBean("userService");
+        UserDao userDao = userService.getUserDao();
+        System.out.println(userService);//输出org.spring.demo.bean.OneBean@13805618
+        System.out.println(userDao);//输出org.spring.demo.bean.OneBean@13805618
     }
 
 }

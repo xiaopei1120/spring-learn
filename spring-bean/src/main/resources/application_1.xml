@@ -7,7 +7,7 @@
     id属性是标识单个bean的定义。
     class属性定义Bean的类型，并使用完全限定的类名。
      -->
-    <bean id="oneBean" class="org.spring.demo.bean.OneBean">
+    <bean id="oneBean" class="org.spring.demo.bean.test1.OneBean">
     </bean>
 
 </beans>

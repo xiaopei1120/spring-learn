@@ -3,11 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--
-    id属性是标识单个bean的定义。
-    class属性定义Bean的类型，并使用完全限定的类名。
-     -->
-    <bean id="oneBean" class="org.spring.demo.bean.OneBean">
+
+    <bean id="userDao" class="org.spring.demo.bean.test2.UserDao"></bean>
+
+    <bean id="userService" class="org.spring.demo.bean.test2.UserService">
+        <!--
+        name:属性名词
+        ref:引用的Bean的名词
+        userDao 指的是 <bean id="userDao" class="org.spring.demo.bean.test2.UserDao"></bean>
+        配置的id名词
+        -->
+        <property name="userDao" ref="userDao"/>
     </bean>
 
 </beans>
